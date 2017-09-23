@@ -26,10 +26,11 @@
         <activity android:name=".ui.SettingActivity"
             android:label="@string/text_setting" />
 
-        <!--主页-->
-        <activity android:name=".ui.GuideActivity" />
-
         <!--引导-->
+        <activity android:name=".ui.GuideActivity"
+            android:theme="@style/NoActivityFullscreen" />
+
+        <!--主页-->
         <activity android:name=".MainActivity" />
 
     </application>
