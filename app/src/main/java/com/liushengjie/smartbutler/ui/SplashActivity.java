@@ -9,6 +9,7 @@ import android.os.Message;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.liushengjie.smartbutler.MainActivity;
@@ -46,7 +47,7 @@ public class SplashActivity extends AppCompatActivity {
                     if (isFirst()) {
                         startActivity(new Intent(SplashActivity.this, GuideActivity.class));
                     } else {
-                        startActivity(new Intent(SplashActivity.this, GuideActivity.class));
+                        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                     }
                     finish();
                     break;
