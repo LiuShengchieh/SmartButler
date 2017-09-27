@@ -58,6 +58,10 @@
         <activity android:name=".ui.RegisteredActivity"
             android:label="注册"/>
 
+        <!--忘记／重置 密码-->
+        <activity android:name=".ui.ForgetPasswordActivity"
+            android:label="忘记密码"/>
+
     </application>
 
 </manifest>
