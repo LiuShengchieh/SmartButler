@@ -137,6 +137,7 @@
         <!--物流查询-->
         <TextView
             android:id="@+id/tv_courier"
+            android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
@@ -154,6 +155,7 @@
         <!--归属地查询-->
         <TextView
             android:id="@+id/tv_phone"
+            android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"

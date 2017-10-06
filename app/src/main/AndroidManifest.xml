@@ -72,6 +72,10 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
+        <!--物流查询-->
+        <activity android:name=".ui.CourierActivity"
+            android:label="物流查询"/>
+
     </application>
 
 </manifest>

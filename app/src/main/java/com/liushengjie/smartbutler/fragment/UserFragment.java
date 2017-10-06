@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.liushengjie.smartbutler.R;
 import com.liushengjie.smartbutler.entity.MyUser;
+import com.liushengjie.smartbutler.ui.CourierActivity;
 import com.liushengjie.smartbutler.ui.LoginActivity;
 import com.liushengjie.smartbutler.utils.L;
 import com.liushengjie.smartbutler.utils.UtilTools;
@@ -53,6 +54,7 @@ public class UserFragment extends Fragment implements View.OnClickListener {
     private Button btn_camera;
     private Button btn_picture;
     private Button btn_cancel;
+    private TextView tv_courier;
 
     public UserFragment() {
         // Required empty public constructor
@@ -69,6 +71,11 @@ public class UserFragment extends Fragment implements View.OnClickListener {
 
     //初始化View
     private void findView(View view) {
+
+        //快递查询
+        tv_courier = view.findViewById(R.id.tv_courier);
+        tv_courier.setOnClickListener(this);
+
         btn_exit_user = view.findViewById(R.id.btn_exit_user);
         btn_exit_user.setOnClickListener(this);
 
@@ -198,6 +205,9 @@ public class UserFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btn_cancel:
                 dialog.dismiss();
+                break;
+            case R.id.tv_courier:
+                startActivity(new Intent(getActivity(), CourierActivity.class));
                 break;
         }
     }
