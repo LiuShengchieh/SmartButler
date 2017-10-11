@@ -16,6 +16,7 @@ import com.kymjs.rxvolley.client.HttpCallback;
 import com.liushengjie.smartbutler.R;
 import com.liushengjie.smartbutler.adapter.ChatListAdapter;
 import com.liushengjie.smartbutler.entity.ChatListData;
+import com.liushengjie.smartbutler.utils.L;
 import com.liushengjie.smartbutler.utils.StaticClass;
 
 import org.json.JSONException;
@@ -96,6 +97,7 @@ public class ButlerFragment extends Fragment implements View.OnClickListener {
                             public void onSuccess(String t) {
                                 super.onSuccess(t);
                                 //Toast.makeText(getActivity(), "Json: " + t, Toast.LENGTH_SHORT).show();
+                                L.i(t);
                                 parsingJson(t);
                             }
                         });
