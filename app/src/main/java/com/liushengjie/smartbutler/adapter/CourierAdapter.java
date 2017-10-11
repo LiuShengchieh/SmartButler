@@ -24,11 +24,15 @@ import java.util.zip.Inflater;
 
 public class CourierAdapter extends BaseAdapter{
 
+    //上下文
     private Context mContext;
-    private List<CourierData> mList;
     //布局加载器
     private LayoutInflater inflater;
+    //实体类
     private CourierData data;
+    //数据
+    private List<CourierData> mList;
+
 
     public CourierAdapter(Context mContext, List<CourierData> mList) {
         this.mContext = mContext;
@@ -65,18 +69,20 @@ public class CourierAdapter extends BaseAdapter{
             //设置缓存
             view.setTag(viewHolder);
         } else {
+            //获取缓存
             viewHolder = (ViewHolder) view.getTag();
         }
         //设置数据
         data = mList.get(i);
-
         viewHolder.tv_remark.setText(data.getRemark());
         viewHolder.tv_zone.setText(data.getZone());
         viewHolder.tv_datetime.setText(data.getDatetime());
 
+        //返回View
         return view;
     }
 
+    //内部类ViewHolder，用于对控件的实例进行缓存
     class ViewHolder {
         private TextView tv_remark;
         private TextView tv_zone;
