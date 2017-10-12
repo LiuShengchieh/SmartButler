@@ -1,16 +1,22 @@
 package com.liushengjie.smartbutler.adapter;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.liushengjie.smartbutler.R;
 import com.liushengjie.smartbutler.entity.WeChatData;
+import com.liushengjie.smartbutler.utils.L;
+import com.liushengjie.smartbutler.utils.PicassoUtils;
+import com.squareup.picasso.Picasso;
 
+import java.net.URL;
 import java.util.List;
 
 /**
@@ -27,11 +33,18 @@ public class WeChatAdapter extends BaseAdapter {
     private LayoutInflater inflater;
     private List<WeChatData> mList;
     private WeChatData data;
+    private int width, height;
+    private WindowManager wm;
 
     public WeChatAdapter(Context mContext, List<WeChatData> mList) {
         this.mContext = mContext;
         this.mList = mList;
         inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+        width = wm.getDefaultDisplay().getWidth();
+        height = wm.getDefaultDisplay().getHeight();
+        L.i("width: " + width + "height: " + height);
     }
 
     @Override
@@ -67,6 +80,12 @@ public class WeChatAdapter extends BaseAdapter {
         data = mList.get(i);
         viewHolder.tv_title.setText(data.getTitle());
         viewHolder.tv_source.setText(data.getSource());
+
+        if (!TextUtils.isEmpty(data.getImgUrl())) {
+            //加载图片
+            PicassoUtils.loadImageViewSize(mContext, data.getImgUrl(), width / 3, 250, viewHolder.iv_img);
+        }
+
 
         return view;
     }

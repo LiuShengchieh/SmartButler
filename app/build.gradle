@@ -54,4 +54,6 @@ dependencies {
     compile ('com.kymjs.rxvolley:rxvolley:1.1.4'){
         exclude group: "io.reactivex"
     }
+    //Picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }
