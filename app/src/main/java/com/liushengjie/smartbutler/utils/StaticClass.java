@@ -34,4 +34,7 @@ public class StaticClass {
     //WeChat Key
     public static final String WECHAT_KEY = "7eb6976c1614ff69ddbfe9a66ce428c4";
 
+    //妹子接口
+    public static final String GIRL_URL_KEY = "http://gank.io/api/data/福利/50/1";
+
 }

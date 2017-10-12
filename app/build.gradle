@@ -56,4 +56,6 @@ dependencies {
     }
     //Picasso
     compile 'com.squareup.picasso:picasso:2.5.2'
+    //PhotoView
+    compile 'com.github.chrisbanes:PhotoView:2.1.3'
 }
