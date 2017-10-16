@@ -37,4 +37,10 @@ public class StaticClass {
     //妹子接口
     public static final String GIRL_URL_KEY = "http://gank.io/api/data/福利/50/1";
 
+    //讯飞接口
+    public static final String VOICE_KEY = "59e00fff";
+
+    //短信action
+    public static final String SMS_ACTION = "android.provider.Telephony.SMS_RECEIVED";
+
 }
