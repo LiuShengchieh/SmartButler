@@ -17,6 +17,7 @@ import com.liushengjie.smartbutler.R;
 import com.liushengjie.smartbutler.service.SmsService;
 import com.liushengjie.smartbutler.utils.L;
 import com.liushengjie.smartbutler.utils.ShareUtils;
+import com.liushengjie.smartbutler.utils.UtilTools;
 import com.uuzuche.lib_zxing.activity.CaptureActivity;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 
@@ -41,6 +42,8 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
     private TextView tv_scan_result;
     //生成二维码
     private LinearLayout ll_qr_code;
+    //版本号
+    private TextView tv_version;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,9 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
     }
 
     private void initView() {
+
+        tv_version = (TextView) findViewById(R.id.tv_version);
+        tv_version.setText(UtilTools.getVersion(SettingActivity.this));
 
         ll_scan = (LinearLayout) findViewById(R.id.ll_scan);
         ll_scan.setOnClickListener(this);
