@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.liushengjie.smartbutler.utils.StaticClass;
 import com.tencent.bugly.crashreport.CrashReport;
+import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 
 import cn.bmob.v3.Bmob;
 
@@ -26,5 +27,7 @@ public class BaseApplication extends Application {
         //初始化bmob
         Bmob.initialize(this, StaticClass.BMOB_APP_ID);
 
+        //初始化二维码
+        ZXingLibrary.initDisplayOpinion(this);
     }
 }
